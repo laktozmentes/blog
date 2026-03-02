@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Adókedvezmény laktózérzékenyeknek 2026-ban: Így igényeld vissza"
+title: "Adókedvezmény 2026-ban: Így igényeld vissza"
 date: 2026-03-02 10:00:00 +0100
 categories: tudnivalok penzugyek laktozmentes
 image: /assets/images/1-adokedvezmeny-2026.png
@@ -43,4 +43,5 @@ A pontos listát a [335/2009. (XII. 29.) Korm. rendeletben](https://net.jogtar.h
 
 
 A laktózmentes ételek többe kerülnek az átlagosnál, így minden extra bevétel jól jön. Intézzétek el a papírokat, mert ez a pénz jár nektek!
+
 
