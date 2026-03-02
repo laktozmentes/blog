@@ -1,50 +1,66 @@
 ---
 layout: default
-title: "Home"
+title: "Üdvözöllek!"
 ---
 
-<section class="text-center py-16 bg-gradient-to-b from-blue-50 to-transparent rounded-3xl mb-16">
-    <h1 class="text-5xl font-extrabold text-slate-900 mb-6">Élj teljes életet <span class="text-blue-600">laktóz nélkül</span>.</h1>
-    <p class="text-xl text-slate-600 max-w-2xl mx-auto">Szakértői tippek, személyes történetek és kipróbált receptek egy helyen.</p>
+<section class="mb-20">
+    {% assign latest = site.posts.first %}
+    <div class="relative group cursor-pointer overflow-hidden rounded-[2rem] bg-blue-600 aspect-[21/9] flex items-center justify-center text-white p-12 shadow-2xl">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-sky-400 opacity-90 transition group-hover:scale-105 duration-700"></div>
+        <div class="relative z-10 text-center max-w-3xl">
+            <span class="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">Kiemelt tartalom</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">{{ latest.title }}</h1>
+            <a href="{{ latest.url }}" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-slate-100 transition shadow-lg">Elolvasom</a>
+        </div>
+    </div>
 </section>
 
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
     
-    <section>
-        <div class="flex justify-between items-end mb-8">
-            <h2 class="text-3xl font-bold border-l-4 border-blue-500 pl-4">Friss Blogbejegyzések</h2>
-            <a href="/blog.html" class="text-blue-600 hover:underline">Összes cikk &rarr;</a>
-        </div>
-        <div class="space-y-6">
-            {% for post in site.posts limit:3 %}
-            <article class="group border-b border-slate-100 pb-6">
-                <span class="text-xs font-bold uppercase text-blue-400">{{ post.date | date: "%Y. %m. %d." }}</span>
-                <h3 class="text-xl font-bold group-hover:text-blue-600 transition mt-1">
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                </h3>
+    <div class="lg:col-span-8">
+        <h2 class="text-3xl font-bold mb-10 pb-2 border-b-2 border-slate-100">Hasznos Tudnivalók</h2>
+        <div class="space-y-16">
+            {% for post in site.posts limit:4 %}
+            <article class="flex flex-col md:flex-row gap-8 group">
+                <div class="md:w-1/3 aspect-video bg-blue-100 rounded-2xl overflow-hidden shadow-inner">
+                    <div class="w-full h-full bg-gradient-to-br from-blue-50 to-blue-200"></div>
+                </div>
+                <div class="md:w-2/3">
+                    <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">{{ post.date | date: "%B %d, %Y" }}</span>
+                    <h3 class="text-2xl font-bold mt-2 mb-4 group-hover:text-blue-600 transition tracking-tight">{{ post.title }}</h3>
+                    <p class="text-slate-500 leading-relaxed mb-4">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+                    <a href="{{ post.url }}" class="text-sm font-bold border-b-2 border-blue-200 hover:border-blue-500 transition pb-1">Tovább olvasom</a>
+                </div>
             </article>
             {% endfor %}
         </div>
-    </section>
+    </div>
 
-    <section>
-        <div class="flex justify-between items-end mb-8">
-            <h2 class="text-3xl font-bold border-l-4 border-sky-400 pl-4">Új Receptek</h2>
-            <a href="/receptek.html" class="text-blue-600 hover:underline">Minden recept &rarr;</a>
-        </div>
-        <div class="grid grid-cols-1 gap-4">
-            {% for recipe in site.recipes limit:3 %}
-            <a href="{{ recipe.url }}" class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
-                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4 font-bold">
-                    R
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-800">{{ recipe.title }}</h3>
-                    <p class="text-xs text-slate-500 italic">Kattints az elkészítésért</p>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-    </section>
+    <div class="lg:col-span-4">
+        <div class="sticky top-24">
+            <h2 class="text-2xl font-bold mb-8 italic">Friss Receptek</h2>
+            <div class="space-y-8">
+                {% for recipe in site.recipes limit:5 %}
+                <a href="{{ recipe.url }}" class="block group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-20 h-20 bg-white shadow-sm border border-slate-100 rounded-xl flex-shrink-0 flex items-center justify-center font-bold text-blue-300 group-hover:border-blue-300 transition">
+                            R
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition leading-snug">{{ recipe.title }}</h4>
+                            <p class="text-xs text-slate-400 mt-1 uppercase tracking-tighter">Laktózmentes</p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
 
+            <div class="mt-12 p-8 bg-blue-50 rounded-[2rem] border border-blue-100 text-center">
+                <h3 class="font-bold text-blue-900 mb-2">Ingyenes Étrend?</h3>
+                <p class="text-sm text-blue-700/70 mb-6">Iratkozz fel, és küldjük a heti menüt!</p>
+                <input type="email" placeholder="Email címed" class="w-full px-4 py-3 rounded-xl border-none ring-1 ring-blue-200 mb-3 text-sm focus:ring-2 focus:ring-blue-500 transition outline-none">
+                <button class="w-full bg-blue-600 text-white py-3 rounded-xl font-bold text-sm shadow-blue-200 shadow-lg hover:bg-blue-700 transition">Feliratkozom</button>
+            </div>
+        </div>
+    </div>
 </div>
