@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Laktózmentes Receptek"
+title: "Receptek"
 ---
 
 <section class="py-16 border-b border-slate-100 mb-16 bg-gradient-to-b from-blue-50/50 to-transparent rounded-[3rem]">
