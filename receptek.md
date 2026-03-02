@@ -15,8 +15,7 @@ title: "Laktózmentes Receptek"
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     {% for recipe in site.recipes %}
-    <article class="group bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 overflow-hidden flex flex-col">
-        
+    <article class="group bg-white rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 overflow-hidden flex flex-col">  
         <div class="aspect-[4/3] overflow-hidden relative">
             {% if recipe.image %}
                 <img src="{{ recipe.image }}" alt="{{ recipe.title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
@@ -24,24 +23,20 @@ title: "Laktózmentes Receptek"
                 <div class="w-full h-full bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
                     <span class="text-blue-200 font-black text-6xl italic group-hover:scale-110 transition duration-500">R</span>
                 </div>
-            {% endif %}
-            
+            {% endif %}  
             <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-blue-600 shadow-sm">
                 Laktózmentes
             </div>
         </div>
-
         <div class="p-8 flex flex-grow flex-col">
             <div class="flex items-center space-x-2 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">
                 <span>{{ recipe.prep_time | default: "Pár perc" }}</span>
                 <span class="w-1 h-1 bg-slate-200 rounded-full"></span>
                 <span>Egyszerű</span>
-            </div>
-            
+            </div>            
             <h2 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition leading-tight tracking-tight">
                 <a href="{{ recipe.url }}">{{ recipe.title }}</a>
-            </h2>
-            
+            </h2>            
             <div class="mt-auto pt-6 border-t border-slate-50 flex justify-between items-center">
                 <a href="{{ recipe.url }}" class="text-xs font-black uppercase tracking-widest text-blue-500 hover:text-slate-900 transition">
                     Recept megnyitása &rarr;
