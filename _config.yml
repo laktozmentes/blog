@@ -2,7 +2,7 @@
 title: "Laktózmentes Blog"
 description: "Az élet laktózmentes oldala"
 url: "https://laktozmentes.github.io"
-baseurl: "" # FONTOS: Hagyd üresen, ha a laktozmentes.github.io címet használod!
+baseurl: "/site" # FONTOS: Most már pontosan megadjuk az alkönyvtárat!
 
 # Gyűjtemények
 collections:
@@ -44,4 +44,5 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+
 
