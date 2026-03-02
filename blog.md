@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Laktózmentes Blog"
+title: "Blog"
 ---
 
 <article class="max-w-3xl mx-auto py-16">
