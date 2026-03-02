@@ -15,11 +15,9 @@ title: "Laktózmentes Blog"
         </h1>
         <div class="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
     </header>
-
     <div class="prose prose-slate lg:prose-xl mx-auto prose-blue prose-img:rounded-[2rem] prose-headings:tracking-tight text-slate-600 leading-relaxed">
         {{ content }}
     </div>
-
     <div class="mt-20 p-12 bg-slate-900 rounded-[3rem] text-center text-white relative overflow-hidden shadow-2xl">
         <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 blur-3xl rounded-full -mr-16 -mt-16"></div>
         <h3 class="text-2xl font-bold mb-4 relative z-10">Hasznos volt a cikk?</h3>
