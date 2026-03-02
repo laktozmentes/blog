@@ -1,0 +1,20 @@
+title: "Laktózmentes Blog"
+description: "Az élet laktózmentes oldala"
+url: "https://laktozmentes.github.io" # Cseréld ki a sajátodra
+baseurl: "blog"
+
+# Gyűjtemények (Collections) beállítása
+collections:
+  recipes:
+    output: true
+    permalink: /receptek/:path/
+
+# Tailwind miatt érdemes a markdown-t tisztán tartani
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - node_modules
+  - tailwind.config.js
+  - package.json
+  - package-lock.json

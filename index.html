@@ -1,1 +1,50 @@
+---
+layout: default
+title: "Home"
+---
 
+<section class="text-center py-16 bg-gradient-to-b from-blue-50 to-transparent rounded-3xl mb-16">
+    <h1 class="text-5xl font-extrabold text-slate-900 mb-6">Élj teljes életet <span class="text-blue-600">laktóz nélkül</span>.</h1>
+    <p class="text-xl text-slate-600 max-w-2xl mx-auto">Szakértői tippek, személyes történetek és kipróbált receptek egy helyen.</p>
+</section>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    
+    <section>
+        <div class="flex justify-between items-end mb-8">
+            <h2 class="text-3xl font-bold border-l-4 border-blue-500 pl-4">Friss Blogbejegyzések</h2>
+            <a href="/blog.html" class="text-blue-600 hover:underline">Összes cikk &rarr;</a>
+        </div>
+        <div class="space-y-6">
+            {% for post in site.posts limit:3 %}
+            <article class="group border-b border-slate-100 pb-6">
+                <span class="text-xs font-bold uppercase text-blue-400">{{ post.date | date: "%Y. %m. %d." }}</span>
+                <h3 class="text-xl font-bold group-hover:text-blue-600 transition mt-1">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                </h3>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <div class="flex justify-between items-end mb-8">
+            <h2 class="text-3xl font-bold border-l-4 border-sky-400 pl-4">Új Receptek</h2>
+            <a href="/receptek.html" class="text-blue-600 hover:underline">Minden recept &rarr;</a>
+        </div>
+        <div class="grid grid-cols-1 gap-4">
+            {% for recipe in site.recipes limit:3 %}
+            <a href="{{ recipe.url }}" class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-slate-100 hover:border-blue-200 hover:shadow-md transition">
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mr-4 font-bold">
+                    R
+                </div>
+                <div>
+                    <h3 class="font-bold text-slate-800">{{ recipe.title }}</h3>
+                    <p class="text-xs text-slate-500 italic">Kattints az elkészítésért</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </section>
+
+</div>

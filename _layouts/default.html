@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Laktózmentes Élet</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 flex flex-col min-h-screen font-sans">
+
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-blue-100">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-black text-blue-600 tracking-tighter">MENTES<span class="text-slate-400">BLOG</span></a>
+            <div class="space-x-8 font-medium text-slate-600">
+                <a href="/blog.html" class="hover:text-blue-600 transition">Blog</a>
+                <a href="/receptek.html" class="hover:text-blue-600 transition">Receptek</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 flex-grow">
+        {{ content }}
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2 text-white font-bold tracking-widest">LAKTÓZMENTES ÉLET</p>
+            <p class="text-sm">&copy; {{ "now" | date: "%Y" }} Minden jog fenntartva.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
