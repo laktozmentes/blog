@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<article class="max-w-4xl mx-auto py-12">
+    <header class="text-center mb-16">
+        <span class="text-blue-500 font-bold text-xs uppercase tracking-[0.2em] mb-4 block">Kipróbált Recept</span>
+        <h1 class="text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">{{ page.title }}</h1>
+        <div class="flex justify-center items-center space-x-6 text-slate-400 text-sm italic">
+            <span>Prep: {{ page.prep_time }}</span>
+            <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+            <span>Főzés: {{ page.cook_time }}</span>
+        </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        <aside class="md:col-span-4">
+            <div class="bg-blue-50 p-8 rounded-[2rem] border border-blue-100 sticky top-24">
+                <h3 class="font-bold text-blue-900 mb-6 flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                    Hozzávalók
+                </h3>
+                <div class="text-blue-800/80 text-sm leading-loose">
+                    {{ page.ingredients | markdownify }}
+                </div>
+            </div>
+        </aside>
+
+        <div class="md:col-span-8">
+            <h3 class="text-2xl font-bold text-slate-900 mb-6">Elkészítés folyamata</h3>
+            <div class="prose prose-slate prose-blue lg:prose-lg leading-relaxed text-slate-600">
+                {{ content }}
+            </div>
+            
+            {% if page.tip %}
+            <div class="mt-12 p-6 border-l-4 border-blue-400 bg-white shadow-sm rounded-r-xl italic text-slate-700">
+                <span class="font-bold text-blue-600 not-italic block mb-1 uppercase text-xs">Séf tipp:</span>
+                {{ page.tip }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</article>
